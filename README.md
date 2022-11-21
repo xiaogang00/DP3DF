@@ -12,12 +12,12 @@ and SR efficiently in a single encoder-and-decoder network. Also, a dynamic resi
 [paper link](https://arxiv.org/abs/2207.01797)
 
 ## dataset
-###SDSD dataset
-Different from original SDSD datasets with dynamic scenes, we utilize its static version (the scenes are the same of original SDSD).
-And you can download the SDSD-indoor and SDSD-outdoor from [baidu pan](https://pan.baidu.com/s/1rfRzshGNcL0MX5soRNuwTA) (验证码: jo1v) and [baidu pan](https://pan.baidu.com/s/1JzDQnFov-u6aBPPgjSzSxQ) (验证码: uibk) 
-(the dataset can also be downloaded from [google pan](https://drive.google.com/drive/folders/1-fQGjzNcyVcBjo_3Us0yM5jDu0CKXXrV?usp=sharing)), and there should contain indoor_static_np and outdoor_static_np.
+### SDSD dataset
+The SDSD dataset is collected as dynamic video pairs containing low-light and normal-light videos. This dataset is consists of two parts, i.e., the indoor subset and the outdoor subset.
+All data is hosted on [baidu pan](https://pan.baidu.com/s/1CSNP_mAJQy1ZcHf5kXSrFQ) (验证码: zcrb) and [google pan](https://drive.google.com/drive/folders/1-fQGjzNcyVcBjo_3Us0yM5jDu0CKXXrV?usp=sharing)
+There should contain "indoor_np" and "outdoor_np".
 
-###SMID dataset
+### SMID dataset
 For SMID, we use its full images and also transfer the RAWdata to RGB, since our work explores low-light image enhancement in the RGB domain.
 You can download our processed datasets for SMID from [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux) 
 (the dataset can also be downloaded from [google pan](https://drive.google.com/drive/folders/1OV4XgVhipsRqjbp8SYr-4Rpk3mPwvdvG?usp=sharing)), and there should contain "SMID_Long_np and SMID_LQ_np".
@@ -88,7 +88,9 @@ python test.py -opt options/test/SMID.yml
 You can download our trained model using the following links: https://drive.google.com/file/d/12Xtgpxt9Q-3oQDH4l_yONOWhm8lPr90Q/view?usp=share_link
 
 the model trained with indoor subset in SDSD: indoor_G.pth
+
 the model trained with outdoor subset in SDSD: outdoor_G.pth
+
 the model trained with SMID: smid_G.pth
 
 ## Citation Information
