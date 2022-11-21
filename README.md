@@ -59,25 +59,25 @@ The training on SMID:
 python -m torch.distributed.launch --nproc_per_node 1 --master_port 4317 train.py -opt options/train/SMID.yml --launcher pytorch
 ```
 
-If you want to resume the training, you should write **the location of checkpoint** in "pretrain_model_G" and **the path of the saved training state** in ``resume_state" of config file (e.g., options/test/SDSD_indoor.yml).
+If you want to resume the training, you should write **the location of checkpoint** in "pretrain_model_G" and **the path of the saved training state** in "resume_state" of config file (e.g., options/test/SDSD_indoor.yml).
 
 ### Test
 
 We use PSNR and SSIM as the metrics for evaluation. Evaluate the model on the corresponding dataset using the test config.
 
-For the evaluation on indoor subset of SDSD, you should write the location of checkpoint in ``pretrain_model_G" of options/test/SDSD_indoor.yml
+For the evaluation on indoor subset of SDSD, you should write the location of checkpoint in "pretrain_model_G" of options/test/SDSD_indoor.yml
 use the following command line:
 ```
 python test.py -opt options/test/SDSD_indoor.yml
 ```
 
-For the evaluation on outdoor subset of SDSD, you should write the location of checkpoint in ``pretrain_model_G" of options/test/SDSD_outdoor.yml
+For the evaluation on outdoor subset of SDSD, you should write the location of checkpoint in "pretrain_model_G" of options/test/SDSD_outdoor.yml
 use the following command line:
 ```
 python test.py -opt options/test/SDSD_outdoor.yml
 ```
 
-For the evaluation on SMID, you should write the location of checkpoint in ``pretrain_model_G" of options/test/SMID.yml
+For the evaluation on SMID, you should write the location of checkpoint in "pretrain_model_G" of options/test/SMID.yml
 use the following command line:
 ```
 python test.py -opt options/test/SMID.yml
