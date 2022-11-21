@@ -1,0 +1,38 @@
+### must be same as 
+
+name: SDSD_outdoor
+suffix: ~  # add suffix to saved images
+model: video_base6_5
+distortion: sr
+scale: 1
+crop_border: ~  # crop border when evaluation. If None(~), crop the scale pixels
+gpu_ids: [1]
+
+datasets:
+  test:
+    name: sdsd_outdoor
+    mode: video_samesize1
+    dataroot_GT: /mnt/proj73/xgxu/proj3_code/EDVR/datasets/outdoor_np/GT
+    dataroot_LQ: /mnt/proj73/xgxu/proj3_code/EDVR/datasets/outdoor_np/input
+    train_size: [960, 512]
+    cache_data: true
+    N_frames: 5
+    padding: new_info
+    testing_dir: pair14,pair36,pair46,pair49,pair60,pair63,pair1,pair48,pair5,pair62
+
+#### network structures
+network_G:
+  which_model_G: DP3DF
+  nf: 64
+  nframes: 5      # must be same as N_frames in dataset.
+  groups: 8
+  front_RBs: 5
+  back_RBs: 10
+  predeblur: true     # default false
+  HR_in: false
+  w_TSA: true
+
+#### path
+path:
+  root: /mnt/proj73/xgxu/DP3DF
+  pretrain_model_G: /mnt/proj73/xgxu/DP3DF/pretrained/SDSD_outdoor.pth
